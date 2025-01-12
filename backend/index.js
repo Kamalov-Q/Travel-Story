@@ -1,9 +1,9 @@
-require("dotenv").config();
+require("dotenv").config({ path: "./.env" });
 
 const bcrypt = require("bcrypt");
 const express = require("express");
 const cors = require("cors");
-const config = require("./config/config.json");
+const config = process.env.MONGODB_URL;
 const mongoose = require("mongoose");
 const fs = require("fs");
 const path = require("path");
@@ -17,7 +17,7 @@ const TravelStory = require("./models/travelStory.model");
 const { authentificateToken } = require("./utilities");
 const upload = require("./multer");
 
-mongoose.connect(config.connectionString).then(() => {
+mongoose.connect(config).then(() => {
   console.log("Connected to MongoDB");
 });
 
