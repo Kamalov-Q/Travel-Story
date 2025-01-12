@@ -23,7 +23,7 @@ mongoose.connect(config).then(() => {
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+app.use(cors());
 
 app.listen(8000, () => {
   console.log("App is running on port 8000");
