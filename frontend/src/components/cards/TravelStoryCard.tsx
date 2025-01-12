@@ -1,6 +1,6 @@
 import { FaHeart } from "react-icons/fa6";
 import { GrMapLocation } from "react-icons/gr";
-import moment from "moment/moment";
+import moment from "moment";
 
 
 interface AllStories {
