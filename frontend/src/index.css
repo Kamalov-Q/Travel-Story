@@ -1,0 +1,34 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: "#fdfeff";
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .input-box {
+    @apply w-full text-sm bg-cyan-600/5 rounded px-5 py-3 mb-4 outline-none;
+  }
+  .btn-primary {
+    @apply w-full text-sm font-medium text-white bg-cyan-500 shadow-lg shadow-cyan-200 p-[10px] rounded-full my-1 hover:bg-cyan-100 hover:text-primary;
+  }
+  .btn-light {
+    @apply bg-cyan-50 text-primary shadow-cyan-100/0 border border-cyan-100 hover:bg-primary hover:text-white;
+  }
+  .login-ui-box {
+    @apply w-80 h-[450px] rounded-full bg-primary absolute rotate-45;
+  }
+  .icon-btn {
+    @apply text-[22px] text-slate-300 cursor-pointer hover:text-red-500;
+  }
+}
