@@ -1,0 +1,3 @@
+{
+  "connectionString": "mongodb+srv://root:password_root@travel-app.amlyh.mongodb.net/?retryWrites=true&w=majority&appName=Travel-App"
+}
