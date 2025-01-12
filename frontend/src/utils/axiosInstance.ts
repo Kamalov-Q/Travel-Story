@@ -1,8 +1,7 @@
 import axios, { InternalAxiosRequestConfig } from "axios";
-import { BASE_URL } from "./constants";
 
 export const axiosInstance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: import.meta.env.BASE_URL,
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
