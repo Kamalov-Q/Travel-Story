@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import axiosInstance from "../../utils/axiosInstance";
 import { AxiosError } from "axios";
 import TravelStoryCard from "../../components/cards/TravelStoryCard";
-
+import Modal from "react-modal";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { MdAdd } from "react-icons/md";
+import AddEditTravelStory from "./AddEditTravelStory";
 
 interface UserInfo {
     email: string;
@@ -18,7 +19,7 @@ interface UserInfo {
     updatedAt?: string;
 }
 
-interface AllStories {
+export interface AllStories {
     _id: string;
     title: string;
     story: string;
@@ -31,10 +32,12 @@ interface AllStories {
     updatedAt?: string;
 }
 
-interface AddEditModalProps {
+export interface AddEditModalProps {
     isShown: boolean;
     type: "add" | "edit";
     data: AllStories | null;
+    onClose?: () => void;
+    getAllStories?: () => void;
 }
 
 const Home = () => {
@@ -90,8 +93,6 @@ const Home = () => {
             }
         }
     }
-
-
     //Handle Edit Story Click
     const handleEdit = (story: AllStories) => { }
 
@@ -138,16 +139,11 @@ const Home = () => {
                 console.error("Unexpected error happened");
             }
         }
-
     }
-
-
     useEffect(() => {
         getUserInfo();
         getAllStories();
-    }, [])
-
-
+    }, []);
     return (
         <>
             <Navbar userInfo={userInfo} />
@@ -181,6 +177,30 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Add & Edit Travel Story */}
+
+            <Modal
+                isOpen={openAddEditModal.isShown}
+                onRequestClose={() => { }}
+                style={{
+                    overlay: {
+                        backgroundColor: "rgba(0, 0, 0, 0.2)",
+                        zIndex: 9999,
+                    },
+                }}
+                appElement={document.getElementById("root") || undefined}
+                className="modal-box"
+            >
+                <AddEditTravelStory
+                    isShown={openAddEditModal.isShown}
+                    type={openAddEditModal.type}
+                    data={openAddEditModal.data}
+                    getAllStories={getAllStories}
+                    onClose={() => setOpenAddEditModal({ isShown: false, type: "add", data: null })}
+                />
+            </Modal>
+
             <button
                 className="w-16 h-16 flex items-center justify-center rounded-full bg-primary fixed right-10 bottom-10 hover:bg-cyan-400"
                 onClick={() => {

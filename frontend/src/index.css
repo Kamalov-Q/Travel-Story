@@ -13,6 +13,19 @@
     background-color: "#fdfeff";
     overflow-x: hidden;
   }
+
+  /* Custom scrollbar styles */
+  .scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: #057c8e; /* Scrollbar thumb color */
+    border-radius: 3px;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: rgba(172, 201, 229); /* Scrollbar track color */
+  }
 }
 
 @layer components {
@@ -30,5 +43,17 @@
   }
   .icon-btn {
     @apply text-[22px] text-slate-300 cursor-pointer hover:text-red-500;
+  }
+  .modal-box {
+    @apply w-[80vw] md:w-[40%] h-[80vh] bg-white rounded-lg mx-auto mt-14 p-5 overflow-y-auto scrollbar z-50;
+  }
+  .btn-small {
+    @apply flex items-center gap-1 text-xs font-medium bg-cyan-50 text-primary shadow-cyan-100/0 border border-cyan-100 hover:bg-primary hover:text-white rounded px-3 py-[3px];
+  }
+  .btn-delete {
+    @apply bg-rose-50 text-rose-500 shadow-rose-100/0 border border-rose-100 hover:bg-rose-500 hover:text-white;
+  }
+  .input-label {
+    @apply text-xs text-slate-400;
   }
 }
