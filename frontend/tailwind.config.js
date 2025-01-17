@@ -11,6 +11,9 @@ export default {
         "login-bg-img": "url('./src/assets/login.png')",
         "signup-bg-img": "url('./src/assets/signUp.png')",
       },
+      screens: {
+        xxs: "375px",
+      },
     },
   },
   plugins: [],

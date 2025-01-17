@@ -2,6 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.rdp-root {
+  --rdp-accent-color: "#01b0cb";
+  --rdp-accent-background-color: "#dffbff";
+  --rdp-day_button-border-radius: 8px;
+  --rdp-selected-font: bold medium var(--rdp-font-family);
+}
+
 @layer base {
   * {
     padding: 0;
@@ -45,7 +52,7 @@
     @apply text-[22px] text-slate-300 cursor-pointer hover:text-red-500;
   }
   .modal-box {
-    @apply w-[80vw] md:w-[40%] h-[80vh] bg-white rounded-lg mx-auto mt-14 p-5 overflow-y-auto scrollbar z-50;
+    @apply w-[80vw] md:w-[40%] h-[80vh] bg-white rounded-lg mx-auto mt-14 p-7 overflow-y-auto scrollbar z-50;
   }
   .btn-small {
     @apply flex items-center gap-1 text-xs font-medium bg-cyan-50 text-primary shadow-cyan-100/0 border border-cyan-100 hover:bg-primary hover:text-white rounded px-3 py-[3px];

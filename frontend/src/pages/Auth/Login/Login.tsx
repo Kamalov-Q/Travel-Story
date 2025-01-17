@@ -65,14 +65,14 @@ const Login = () => {
             <div className="login-ui-box right-10 -top-40" />
             <div className="login-ui-box bg-cyan-200 -bottom-40 right-1/2" />
             <div className="container h-screen flex items-center justify-center px-20 mx-auto">
-                <div className="w-2/4 h-[75vh] flex items-end bg-login-bg-img bg-cover bg-center rounded-lg p-10 z-50">
+                <div className="w-2/4 h-[75vh] hidden md:flex items-end bg-login-bg-img bg-cover bg-center rounded-lg p-10 z-50">
                     <div className="">
                         <h4 className="text-5xl text-white font-semibold leading-[58px]">Capture Your <br />Journeys</h4>
                         <p className="text-[15px] text-white leading-6 pr-7 mt-4">Record your travel experiences and memories in your personal travel journey</p>
                     </div>
                 </div>
 
-                <div className="w-2/4 h-[75vh] bg-white rounded-r-lg relative p-16 shadow-lg shadow-cyan-200/20">
+                <div className="w-full md:w-2/4 h-1/2 md:h-[75vh] bg-white rounded-r-lg relative p-5 md:p-16 shadow-lg shadow-cyan-200/20">
                     <form onSubmit={handleLogin}>
                         <h4 className="text-2xl font-semibold mb-2">Login</h4>
                         <input type="text" placeholder="Email" className="input-box"

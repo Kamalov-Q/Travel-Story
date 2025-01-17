@@ -25,14 +25,14 @@ interface TravelStoryCardProps {
     imageUrl: string;
     date: Date;
     onEdit: (story: AllStories) => void;
-    onClick: (story: AllStories) => void;
+    onClick: () => void;
     onFavouriteClick: (story: AllStories) => void;
 }
 
 
 const TravelStoryCard = ({ title, imageUrl, _id, isFavourites, story, date, visitedLocation, onEdit, onClick, onFavouriteClick }: TravelStoryCardProps) => {
     return (
-        <div className="border rounded-lg overflow-hidden bg-white hover:shadow-lg cursor-pointer hover:shadow-slate-200 transition-all ease-in-out relative w-[300px] m-5">
+        <div className="border rounded-lg overflow-hidden bg-white hover:shadow-lg cursor-pointer hover:shadow-slate-200 transition-all ease-in-out relative w-auto md:w-[400px] h-auto m-5" onClick={onClick}>
             <img src={imageUrl} alt="Travel Story Card" className="w-full h-56 object-fill rounded-lg"
             />
 
