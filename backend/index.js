@@ -347,7 +347,7 @@ app.post("/add-travel-story", authentificateToken, async (req, res) => {
 app.get("/get-all-stories", authentificateToken, async (req, res) => {
   const { userId } = req.user;
   try {
-    const travelStories = await TravelStory.find({ userId: userId }).sort({
+    const travelStories = await TravelStory.find({ userId }).sort({
       isFavourites: -1,
     });
     res
